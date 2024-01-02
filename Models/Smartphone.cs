@@ -1,16 +1,24 @@
 namespace DesafioPOO.Models
 {
+    // Classe abstrata -> modelo de SmartPhone
     public abstract class Smartphone
     {
+        // Propriedades públicas e protegidas -> encapsulamento
         public string Numero { get; set; }
-        // TODO: Implementar as propriedades faltantes de acordo com o diagrama
+        protected string Modelo;
+        protected string Imei;
+        protected int Memoria;
 
-        public Smartphone(string numero)
+        // Construtor da classe
+        public Smartphone(string numero, string modelo, string imei, int memoria)
         {
             Numero = numero;
-            // TODO: Passar os parâmetros do construtor para as propriedades
+            Modelo = modelo;
+            Imei = imei;
+            Memoria = memoria;
         }
 
+        // Métodos globais de ambos SmartPhones
         public void Ligar()
         {
             Console.WriteLine("Ligando...");
@@ -21,6 +29,7 @@ namespace DesafioPOO.Models
             Console.WriteLine("Recebendo ligação...");
         }
 
+        // Método abstrato para ser sobre-escrito pelas classes filhas
         public abstract void InstalarAplicativo(string nomeApp);
     }
 }
